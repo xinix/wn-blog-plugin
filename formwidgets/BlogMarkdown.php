@@ -1,10 +1,10 @@
-<?php namespace Winter\Blog\FormWidgets;
+<?php namespace Xinix\Blog\FormWidgets;
 
 use Lang;
 use Input;
 use Response;
 use Validator;
-use Winter\Blog\Models\Post as PostModel;
+use Xinix\Blog\Models\Post as PostModel;
 use Backend\Classes\FormWidgetBase;
 use Backend\FormWidgets\MarkdownEditor;
 use System\Models\File;
@@ -15,7 +15,7 @@ use Exception;
 /**
  * Special markdown editor for the Create/Edit Post form.
  *
- * @package winter\blog
+ * @package xinix\blog
  * @author Alexey Bobkov, Samuel Georges
  */
 class BlogMarkdown extends MarkdownEditor

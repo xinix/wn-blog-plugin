@@ -9,13 +9,13 @@
                 {% if post.categories.count %}
                     {% set categoryLinks = post.categories | map(c => "<a href=\"#{c.url}\">#{c.name}</a>") | join(', ') %}
 
-                    {{ 'winter.blog::lang.post.posted_byline' | trans({
-                        date: post.published_at | date('winter.blog::lang.post.date_format' | trans),
+                    {{ 'xinix.blog::lang.post.posted_byline' | trans({
+                        date: post.published_at | date('xinix.blog::lang.post.date_format' | trans),
                         categories: categoryLinks
                     }) }}
                 {% else %}
-                    {{ 'winter.blog::lang.post.posted_byline_no_categories' | trans({
-                        date: post.published_at | date('winter.blog::lang.post.date_format' | trans)
+                    {{ 'xinix.blog::lang.post.posted_byline_no_categories' | trans({
+                        date: post.published_at | date('xinix.blog::lang.post.date_format' | trans)
                     }) }}
                 {% endif %}
             </p>

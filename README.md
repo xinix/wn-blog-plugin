@@ -95,7 +95,7 @@ The next example shows the basic component usage with the category filter:
         {% component 'blogPosts' %}
     {% endif %}
 
-The post list and the pagination are coded in the default component partial `plugins/winter/blog/components/posts/default.htm`. If the default markup is not suitable for your website, feel free to copy it from the default partial and replace the `{% component %}` call in the example above with the partial contents.
+The post list and the pagination are coded in the default component partial `plugins/xinix/blog/components/posts/default.htm`. If the default markup is not suitable for your website, feel free to copy it from the default partial and replace the `{% component %}` call in the example above with the partial contents.
 
 ### Post page
 
@@ -132,7 +132,7 @@ The next example shows the basic component usage on the blog page:
         <h2>Post not found</h2>
     {% endif %}
 
-The post details is coded in the default component partial `plugins/winter/blog/components/post/default.htm`.
+The post details is coded in the default component partial `plugins/xinix/blog/components/post/default.htm`.
 
 ### Category list
 
@@ -161,7 +161,7 @@ The component can be used on any page. The next example shows the basic componen
     </div>
     ...
 
-The category list is coded in the default component partial `plugins/winter/blog/components/categories/default.htm`.
+The category list is coded in the default component partial `plugins/xinix/blog/components/categories/default.htm`.
 
 ### RSS feed
 

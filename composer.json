@@ -1,11 +1,16 @@
 {
-    "name": "winter/wn-blog-plugin",
+    "name": "xinix/wn-blog-plugin",
     "type": "winter-plugin",
     "description": "Blog plugin for Winter CMS",
-    "homepage": "https://github.com/wintercms/wn-blog-plugin",
+    "homepage": "https://github.com/xinix/wn-blog-plugin",
     "keywords": ["winter cms", "winter", "plugin", "blog"],
     "license": "MIT",
     "authors": [
+        {
+            "name": "Nico Van den Winckel",
+            "email": "nvdw007@gmail.com",
+            "role": "Remixer"
+        },
         {
             "name": "Alexey Bobkov",
             "email": "aleksey.bobkov@gmail.com",
@@ -23,16 +28,12 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/wintercms/wn-blog-plugin/issues",
-        "discord": "https://discord.gg/D5MFSPH6Ux",
-        "source": "https://github.com/wintercms/wn-blog-plugin"
+        "issues": "https://github.com/xinix/wn-blog-plugin/issues",
+        "source": "https://github.com/xinix/wn-blog-plugin"
     },
     "require": {
         "php": ">=7.0",
         "composer/installers": "~1.0"
-    },
-    "replace": {
-        "rainlab/blog-plugin": "~1.3"
     },
     "extra": {
         "installer-name": "blog"

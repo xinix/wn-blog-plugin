@@ -1,8 +1,8 @@
-<?php namespace Winter\Blog\Updates;
+<?php namespace Xinix\Blog\Updates;
 
 use Carbon\Carbon;
-use Winter\Blog\Models\Post;
-use Winter\Blog\Models\Category;
+use Xinix\Blog\Models\Post;
+use Xinix\Blog\Models\Category;
 use Winter\Storm\Database\Updates\Seeder;
 
 class SeedAllTables extends Seeder
@@ -34,16 +34,16 @@ You can edit this content by selecting **Blog** from the administration back-end
         });
 
         Category::create([
-            'name' => trans('winter.blog::lang.categories.uncategorized'),
+            'name' => trans('xinix.blog::lang.categories.uncategorized'),
             'slug' => 'uncategorized',
         ]);
 
         Post::extend(function ($model) {
-            $model->setTable('winter_blog_posts');
+            $model->setTable('xinix_blog_posts');
         });
 
         Category::extend(function ($model) {
-            $model->setTable('winter_blog_categories');
+            $model->setTable('xinix_blog_categories');
         });
     }
 }

@@ -5,14 +5,14 @@
 fields:
 
     title:
-        label: winter.blog::lang.post.title
+        label: xinix.blog::lang.post.title
         span: left
-        placeholder: winter.blog::lang.post.title_placeholder
+        placeholder: xinix.blog::lang.post.title_placeholder
 
     slug:
-        label: winter.blog::lang.post.slug
+        label: xinix.blog::lang.post.slug
         span: right
-        placeholder: winter.blog::lang.post.slug_placeholder
+        placeholder: xinix.blog::lang.post.slug_placeholder
         preset:
             field: title
             type: slug
@@ -26,42 +26,42 @@ secondaryTabs:
     stretch: true
 
     icons:
-        winter.blog::lang.post.tab_edit: icon-pencil
-        winter.blog::lang.post.tab_categories: icon-tags
-        winter.blog::lang.post.tab_manage: icon-cog
+        xinix.blog::lang.post.tab_edit: icon-pencil
+        xinix.blog::lang.post.tab_categories: icon-tags
+        xinix.blog::lang.post.tab_manage: icon-cog
 
 
     fields:
         content:
-            tab: winter.blog::lang.post.tab_edit
-            type: Winter\Blog\FormWidgets\BlogMarkdown
+            tab: xinix.blog::lang.post.tab_edit
+            type: Xinix\Blog\FormWidgets\BlogMarkdown
             cssClass: field-slim blog-post-preview
             stretch: true
             mode: split
 
         categories:
-            tab: winter.blog::lang.post.tab_categories
+            tab: xinix.blog::lang.post.tab_categories
             type: relation
-            commentAbove: winter.blog::lang.post.categories_comment
-            placeholder: winter.blog::lang.post.categories_placeholder
+            commentAbove: xinix.blog::lang.post.categories_comment
+            placeholder: xinix.blog::lang.post.categories_placeholder
 
         published:
-            tab: winter.blog::lang.post.tab_manage
-            label: winter.blog::lang.post.published
+            tab: xinix.blog::lang.post.tab_manage
+            label: xinix.blog::lang.post.published
             span: left
             type: checkbox
 
         user:
-            tab: winter.blog::lang.post.tab_manage
-            label: winter.blog::lang.post.published_by
+            tab: xinix.blog::lang.post.tab_manage
+            label: xinix.blog::lang.post.published_by
             span: right
             type: relation
             nameFrom: login
-            emptyOption: winter.blog::lang.post.current_user
+            emptyOption: xinix.blog::lang.post.current_user
 
         published_at:
-            tab: winter.blog::lang.post.tab_manage
-            label: winter.blog::lang.post.published_on
+            tab: xinix.blog::lang.post.tab_manage
+            label: xinix.blog::lang.post.published_on
             span: left
             type: datepicker
             mode: datetime
@@ -71,23 +71,23 @@ secondaryTabs:
                 condition: checked
 
         metadata[preview_page]:
-            tab: winter.blog::lang.post.tab_manage
-            label: winter.blog::lang.post.preview_page
-            commentAbove: winter.blog::lang.post.preview_page_comment
+            tab: xinix.blog::lang.post.tab_manage
+            label: xinix.blog::lang.post.preview_page
+            commentAbove: xinix.blog::lang.post.preview_page_comment
             span: auto
             type: dropdown
             options: getCmsPageOptions
 
         excerpt:
-            tab: winter.blog::lang.post.tab_manage
-            label: winter.blog::lang.post.excerpt
+            tab: xinix.blog::lang.post.tab_manage
+            label: xinix.blog::lang.post.excerpt
             type: textarea
             size: small
 
         featured_images:
-            tab: winter.blog::lang.post.tab_manage
-            label: winter.blog::lang.post.featured_images
+            tab: xinix.blog::lang.post.tab_manage
+            label: xinix.blog::lang.post.featured_images
             type: fileupload
             mode: image
-            imageWidth: 200
-            imageHeight: 200
+            imageWidth: 500
+            imageHeight: 500

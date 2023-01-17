@@ -1,0 +1,29 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        label: xinix.blog::lang.game.name
+        placeholder: xinix.blog::lang.game.name_placeholder
+        span: left
+
+    slug:
+        label: xinix.blog::lang.game.slug
+        span: right
+        placeholder: xinix.blog::lang.game.slug_placeholder
+        preset: name
+
+    image:
+        label: xinix.blog::lang.game.image
+        span: left
+        type: fileupload
+        mode: image
+        imageWidth: 500
+        imageHeight: 500
+
+    bgg_id:
+        label: xinix.blog::lang.game.bgg_id
+        span: right
+        type: number

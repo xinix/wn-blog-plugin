@@ -11,7 +11,8 @@ return [
         'posts' => 'Artikelen',
         'create_post' => 'Artikel',
         'categories' => 'Categorieën',
-        'create_category' => 'blog categorie',
+        'create_category' => 'Categorie',
+        'create_game' => 'Spellen',
         'tab' => 'Blog',
         'access_posts' => 'Blog artikelen beheren',
         'access_categories' => 'Blog categorieën beheren',
@@ -66,6 +67,19 @@ return [
         'list_title' => 'Beheer blog categorieën',
         'new_category' => 'Nieuwe categorie',
         'uncategorized' => 'Ongecategoriseerd'
+    ],
+    'game' => [
+        'new_game' => 'Nieuw spel',
+        'name' => 'Naam',
+        'name_placeholder' => 'Nieuwe game naam',
+        'slug' => 'Slug',
+        'slug_placeholder' => 'nieuw-game-slug',
+        'image' => 'Afbeelding',
+        'bgg_id' => 'BoardGameGeek ID',
+        'posts' => 'Posts',
+        'delete_confirm' => 'Verwijder dit spel?',
+        'delete_success' => 'Spel is verwijdert.',
+        'return_to_games' => 'Terug naar games'
     ],
     'category' => [
         'name' => 'Naam',

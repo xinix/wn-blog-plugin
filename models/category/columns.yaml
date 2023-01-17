@@ -5,9 +5,9 @@
 columns:
 
     name:
-        label: winter.blog::lang.category.name
+        label: xinix.blog::lang.category.name
         searchable: true
 
     post_count:
-        label: winter.blog::lang.category.posts
+        label: xinix.blog::lang.category.posts
         sortable: false

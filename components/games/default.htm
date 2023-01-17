@@ -1,0 +1,10 @@
+{% if __SELF__.games|length > 0 %}
+    <ul class="category-list">
+        {% partial __SELF__ ~ "::items"
+            games = __SELF__.games
+            currentCategorySlug = __SELF__.currentCategorySlug
+        %}
+    </ul>
+{% else %}
+    <p>No games were found.</p>
+{% endif %}

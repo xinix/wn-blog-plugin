@@ -1,4 +1,4 @@
-<?php namespace Winter\Blog\Models;
+<?php namespace Xinix\Blog\Models;
 
 use Url;
 use Html;
@@ -12,7 +12,7 @@ use Cms\Classes\Page as CmsPage;
 use Cms\Classes\Theme;
 use Cms\Classes\Controller;
 use Winter\Storm\Database\NestedTreeScope;
-use Winter\Blog\Classes\TagProcessor;
+use Xinix\Blog\Classes\TagProcessor;
 use ValidationException;
 
 /**
@@ -22,7 +22,7 @@ class Post extends Model
 {
     use \Winter\Storm\Database\Traits\Validation;
 
-    public $table = 'winter_blog_posts';
+    public $table = 'xinix_blog_posts';
     public $implement = ['@Winter.Translate.Behaviors.TranslatableModel'];
 
     /*
@@ -68,15 +68,15 @@ class Post extends Model
      * @var array
      */
     public static $allowedSortingOptions = [
-        'title asc'         => 'winter.blog::lang.sorting.title_asc',
-        'title desc'        => 'winter.blog::lang.sorting.title_desc',
-        'created_at asc'    => 'winter.blog::lang.sorting.created_asc',
-        'created_at desc'   => 'winter.blog::lang.sorting.created_desc',
-        'updated_at asc'    => 'winter.blog::lang.sorting.updated_asc',
-        'updated_at desc'   => 'winter.blog::lang.sorting.updated_desc',
-        'published_at asc'  => 'winter.blog::lang.sorting.published_asc',
-        'published_at desc' => 'winter.blog::lang.sorting.published_desc',
-        'random'            => 'winter.blog::lang.sorting.random'
+        'title asc'         => 'xinix.blog::lang.sorting.title_asc',
+        'title desc'        => 'xinix.blog::lang.sorting.title_desc',
+        'created_at asc'    => 'xinix.blog::lang.sorting.created_asc',
+        'created_at desc'   => 'xinix.blog::lang.sorting.created_desc',
+        'updated_at asc'    => 'xinix.blog::lang.sorting.updated_asc',
+        'updated_at desc'   => 'xinix.blog::lang.sorting.updated_desc',
+        'published_at asc'  => 'xinix.blog::lang.sorting.published_asc',
+        'published_at desc' => 'xinix.blog::lang.sorting.published_desc',
+        'random'            => 'xinix.blog::lang.sorting.random'
     ];
 
     /*
@@ -88,8 +88,8 @@ class Post extends Model
 
     public $belongsToMany = [
         'categories' => [
-            'Winter\Blog\Models\Category',
-            'table' => 'winter_blog_posts_categories',
+            'Xinix\Blog\Models\Category',
+            'table' => 'xinix_blog_posts_categories',
             'order' => 'name'
         ]
     ];
@@ -141,7 +141,7 @@ class Post extends Model
 
         $user = BackendAuth::getUser();
 
-        if (!$user->hasAnyAccess(['winter.blog.access_publish'])) {
+        if (!$user->hasAnyAccess(['xinix.blog.access_publish'])) {
             $fields->published->hidden = true;
             $fields->published_at->hidden = true;
         }
@@ -155,7 +155,7 @@ class Post extends Model
     {
         if ($this->published && !$this->published_at) {
             throw new ValidationException([
-               'published_at' => Lang::get('winter.blog::lang.post.published_validation')
+               'published_at' => Lang::get('xinix.blog::lang.post.published_validation')
             ]);
         }
     }
@@ -195,7 +195,7 @@ class Post extends Model
      */
     public function canEdit(User $user): bool
     {
-        return ($this->user_id === $user->id) || $user->hasAnyAccess(['winter.blog.access_other_posts']);
+        return ($this->user_id === $user->id) || $user->hasAnyAccess(['xinix.blog.access_other_posts']);
     }
 
     public static function formatHtml($input, $preview = false)

@@ -1,4 +1,4 @@
-<?php namespace Winter\Blog\Updates;
+<?php namespace Xinix\Blog\Updates;
 
 use Db;
 use Schema;
@@ -13,12 +13,12 @@ class FixTranslateRecords extends Migration
 
     public function up()
     {
-        $this->fix_records('RainLab', 'Winter');
+        $this->fix_records('Winter', 'Xinix');
     }
 
     public function down()
     {
-        $this->fix_records('Winter', 'RainLab');
+        $this->fix_records('Xinix', 'Winter');
     }
 
     public function fix_records($from, $to)

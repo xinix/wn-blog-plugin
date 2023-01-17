@@ -1,4 +1,4 @@
-<?php namespace Winter\Blog\Updates;
+<?php namespace Xinix\Blog\Updates;
 
 use Winter\Storm\Database\Updates\Migration;
 use DbDongle;

@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: xinix.blog::lang.blog.create_game
+form: ~/plugins/xinix/blog/models/game/fields.yaml
+modelClass: Xinix\Blog\Models\Game
+defaultRedirect: xinix/blog/games
+
+create:
+    redirect: xinix/blog/games/update/:id
+    redirectClose: xinix/blog/games
+
+update:
+    redirect: xinix/blog/games
+    redirectClose: xinix/blog/games

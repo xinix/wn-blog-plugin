@@ -1,10 +1,10 @@
-<?php namespace Winter\Blog\Controllers;
+<?php namespace Xinix\Blog\Controllers;
 
 use BackendMenu;
 use Flash;
 use Lang;
 use Backend\Classes\Controller;
-use Winter\Blog\Models\Post;
+use Xinix\Blog\Models\Post;
 
 class Posts extends Controller
 {
@@ -18,13 +18,13 @@ class Posts extends Controller
     public $listConfig = 'config_list.yaml';
     public $importExportConfig = 'config_import_export.yaml';
 
-    public $requiredPermissions = ['winter.blog.access_other_posts', 'winter.blog.access_posts'];
+    public $requiredPermissions = ['xinix.blog.access_other_posts', 'xinix.blog.access_posts'];
 
     public function __construct()
     {
         parent::__construct();
 
-        BackendMenu::setContext('Winter.Blog', 'blog', 'posts');
+        BackendMenu::setContext('Xinix.Blog', 'blog', 'posts');
     }
 
     public function index()
@@ -41,8 +41,8 @@ class Posts extends Controller
         BackendMenu::setContextSideMenu('new_post');
 
         $this->bodyClass = 'compact-container';
-        $this->addCss('/plugins/winter/blog/assets/css/winter.blog-preview.css');
-        $this->addJs('/plugins/winter/blog/assets/js/post-form.js');
+        $this->addCss('/plugins/xinix/blog/assets/css/xinix.blog-preview.css');
+        $this->addJs('/plugins/xinix/blog/assets/js/post-form.js');
 
         return $this->asExtension('FormController')->create();
     }
@@ -50,29 +50,29 @@ class Posts extends Controller
     public function update($recordId = null)
     {
         $this->bodyClass = 'compact-container';
-        $this->addCss('/plugins/winter/blog/assets/css/winter.blog-preview.css');
-        $this->addJs('/plugins/winter/blog/assets/js/post-form.js');
+        $this->addCss('/plugins/xinix/blog/assets/css/xinix.blog-preview.css');
+        $this->addJs('/plugins/xinix/blog/assets/js/post-form.js');
 
         return $this->asExtension('FormController')->update($recordId);
     }
 
     public function export()
     {
-        $this->addCss('/plugins/winter/blog/assets/css/winter.blog-export.css');
+        $this->addCss('/plugins/xinix/blog/assets/css/xinix.blog-export.css');
 
         return $this->asExtension('ImportExportController')->export();
     }
 
     public function listExtendQuery($query)
     {
-        if (!$this->user->hasAnyAccess(['winter.blog.access_other_posts'])) {
+        if (!$this->user->hasAnyAccess(['xinix.blog.access_other_posts'])) {
             $query->where('user_id', $this->user->id);
         }
     }
 
     public function formExtendQuery($query)
     {
-        if (!$this->user->hasAnyAccess(['winter.blog.access_other_posts'])) {
+        if (!$this->user->hasAnyAccess(['xinix.blog.access_other_posts'])) {
             $query->where('user_id', $this->user->id);
         }
     }
@@ -94,7 +94,7 @@ class Posts extends Controller
         // Fix can be more restrictive checks here or finishing changes to the class loader so that
         // disabled plugins cannot even have their classes loaded.
         if ($model instanceof Post && $model->isClassExtendedWith('Winter.Translate.Behaviors.TranslatableModel')) {
-            $widget->secondaryTabs['fields']['content']['type'] = 'Winter\Blog\FormWidgets\MLBlogMarkdown';
+            $widget->secondaryTabs['fields']['content']['type'] = 'Xinix\Blog\FormWidgets\MLBlogMarkdown';
         }
     }
 
@@ -110,7 +110,7 @@ class Posts extends Controller
                 $post->delete();
             }
 
-            Flash::success(Lang::get('winter.blog::lang.post.delete_success'));
+            Flash::success(Lang::get('xinix.blog::lang.post.delete_success'));
         }
 
         return $this->listRefresh();

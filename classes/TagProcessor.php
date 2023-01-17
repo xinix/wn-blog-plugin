@@ -1,9 +1,9 @@
-<?php namespace Winter\Blog\Classes;
+<?php namespace Xinix\Blog\Classes;
 
 /**
  * Blog Markdown tag processor.
  *
- * @package winter\blog
+ * @package xinix\blog
  * @author Alexey Bobkov, Samuel Georges
  */
 class TagProcessor

@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: ~/plugins/winter/blog/models/post/columns.yaml
+list: ~/plugins/xinix/blog/models/post/columns.yaml
 
 # Model Class name
-modelClass: Winter\Blog\Models\Post
+modelClass: Xinix\Blog\Models\Post
 
 # List Title
-title: winter.blog::lang.posts.list_title
+title: xinix.blog::lang.posts.list_title
 
 # Link URL for each record
-recordUrl: winter/blog/posts/update/:id
+recordUrl: xinix/blog/posts/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

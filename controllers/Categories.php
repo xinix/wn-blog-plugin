@@ -1,10 +1,10 @@
-<?php namespace Winter\Blog\Controllers;
+<?php namespace Xinix\Blog\Controllers;
 
 use BackendMenu;
 use Flash;
 use Lang;
 use Backend\Classes\Controller;
-use Winter\Blog\Models\Category;
+use Xinix\Blog\Models\Category;
 
 class Categories extends Controller
 {
@@ -18,13 +18,13 @@ class Categories extends Controller
     public $listConfig = 'config_list.yaml';
     public $reorderConfig = 'config_reorder.yaml';
 
-    public $requiredPermissions = ['winter.blog.access_categories'];
+    public $requiredPermissions = ['xinix.blog.access_categories'];
 
     public function __construct()
     {
         parent::__construct();
 
-        BackendMenu::setContext('Winter.Blog', 'blog', 'categories');
+        BackendMenu::setContext('Xinix.Blog', 'blog', 'categories');
     }
 
     public function index_onDelete()
@@ -39,7 +39,7 @@ class Categories extends Controller
                 $category->delete();
             }
 
-            Flash::success(Lang::get('winter.blog::lang.category.delete_success'));
+            Flash::success(Lang::get('xinix.blog::lang.category.delete_success'));
         }
 
         return $this->listRefresh();

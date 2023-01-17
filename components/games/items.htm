@@ -1,0 +1,18 @@
+{% for game in games %}
+    {% set postCount = game.post_count %}
+    <li {% if game.slug == currentGameSlug %}class="active"{% endif %}>
+        <a href="{{ game.url }}">{{ game.name }}</a>
+        {% if postCount %}
+            <span class="badge">{{ postCount }}</span>
+        {% endif %}
+
+        {% if game.children|length > 0 %}
+            <ul>
+                {% partial __SELF__ ~ "::items"
+                    games=game.children
+                    currentGameSlug=currentGameSlug
+                %}
+            </ul>
+        {% endif %}
+    </li>
+{% endfor %}

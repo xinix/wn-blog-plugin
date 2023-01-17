@@ -1,20 +1,20 @@
-<?php namespace Winter\Blog;
+<?php namespace Xinix\Blog;
 
 use Backend;
 use Backend\Models\UserRole;
 use Event;
 use System\Classes\PluginBase;
-use Winter\Blog\Classes\TagProcessor;
-use Winter\Blog\Models\Category;
-use Winter\Blog\Models\Post;
+use Xinix\Blog\Classes\TagProcessor;
+use Xinix\Blog\Models\Category;
+use Xinix\Blog\Models\Post;
 
 class Plugin extends PluginBase
 {
     public function pluginDetails()
     {
         return [
-            'name'        => 'winter.blog::lang.plugin.name',
-            'description' => 'winter.blog::lang.plugin.description',
+            'name'        => 'xinix.blog::lang.plugin.name',
+            'description' => 'xinix.blog::lang.plugin.description',
             'author'      => 'Winter CMS',
             'icon'        => 'icon-pencil',
             'homepage'    => 'https://github.com/wintercms/wn-blog-plugin',
@@ -25,44 +25,44 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'Winter\Blog\Components\Post'       => 'blogPost',
-            'Winter\Blog\Components\Posts'      => 'blogPosts',
-            'Winter\Blog\Components\Categories' => 'blogCategories',
-            'Winter\Blog\Components\RssFeed'    => 'blogRssFeed'
+            'Xinix\Blog\Components\Post'       => 'blogPost',
+            'Xinix\Blog\Components\Posts'      => 'blogPosts',
+            'Xinix\Blog\Components\Categories' => 'blogCategories',
+            'Xinix\Blog\Components\RssFeed'    => 'blogRssFeed'
         ];
     }
 
     public function registerPermissions()
     {
         return [
-            'winter.blog.manage_settings' => [
-                'tab'   => 'winter.blog::lang.blog.tab',
-                'label' => 'winter.blog::lang.blog.manage_settings',
+            'xinix.blog.manage_settings' => [
+                'tab'   => 'xinix.blog::lang.blog.tab',
+                'label' => 'xinix.blog::lang.blog.manage_settings',
                 'roles' => [UserRole::CODE_DEVELOPER, UserRole::CODE_PUBLISHER],
             ],
-            'winter.blog.access_posts' => [
-                'tab'   => 'winter.blog::lang.blog.tab',
-                'label' => 'winter.blog::lang.blog.access_posts',
+            'xinix.blog.access_posts' => [
+                'tab'   => 'xinix.blog::lang.blog.tab',
+                'label' => 'xinix.blog::lang.blog.access_posts',
                 'roles' => [UserRole::CODE_DEVELOPER, UserRole::CODE_PUBLISHER],
             ],
-            'winter.blog.access_categories' => [
-                'tab'   => 'winter.blog::lang.blog.tab',
-                'label' => 'winter.blog::lang.blog.access_categories',
+            'xinix.blog.access_categories' => [
+                'tab'   => 'xinix.blog::lang.blog.tab',
+                'label' => 'xinix.blog::lang.blog.access_categories',
                 'roles' => [UserRole::CODE_DEVELOPER, UserRole::CODE_PUBLISHER],
             ],
-            'winter.blog.access_other_posts' => [
-                'tab'   => 'winter.blog::lang.blog.tab',
-                'label' => 'winter.blog::lang.blog.access_other_posts',
+            'xinix.blog.access_other_posts' => [
+                'tab'   => 'xinix.blog::lang.blog.tab',
+                'label' => 'xinix.blog::lang.blog.access_other_posts',
                 'roles' => [UserRole::CODE_DEVELOPER, UserRole::CODE_PUBLISHER],
             ],
-            'winter.blog.access_import_export' => [
-                'tab'   => 'winter.blog::lang.blog.tab',
-                'label' => 'winter.blog::lang.blog.access_import_export',
+            'xinix.blog.access_import_export' => [
+                'tab'   => 'xinix.blog::lang.blog.tab',
+                'label' => 'xinix.blog::lang.blog.access_import_export',
                 'roles' => [UserRole::CODE_DEVELOPER, UserRole::CODE_PUBLISHER],
             ],
-            'winter.blog.access_publish' => [
-                'tab'   => 'winter.blog::lang.blog.tab',
-                'label' => 'winter.blog::lang.blog.access_publish',
+            'xinix.blog.access_publish' => [
+                'tab'   => 'xinix.blog::lang.blog.tab',
+                'label' => 'xinix.blog::lang.blog.access_publish',
                 'roles' => [UserRole::CODE_DEVELOPER, UserRole::CODE_PUBLISHER],
             ]
         ];
@@ -72,31 +72,31 @@ class Plugin extends PluginBase
     {
         return [
             'blog' => [
-                'label'       => 'winter.blog::lang.blog.menu_label',
-                'url'         => Backend::url('winter/blog/posts'),
+                'label'       => 'xinix.blog::lang.blog.menu_label',
+                'url'         => Backend::url('xinix/blog/posts'),
                 'icon'        => 'icon-pencil',
-                'iconSvg'     => 'plugins/winter/blog/assets/images/blog-icon.svg',
-                'permissions' => ['winter.blog.*'],
+                'iconSvg'     => 'plugins/xinix/blog/assets/images/blog-icon.svg',
+                'permissions' => ['xinix.blog.*'],
                 'order'       => 300,
 
                 'sideMenu' => [
                     'new_post' => [
-                        'label'       => 'winter.blog::lang.posts.new_post',
+                        'label'       => 'xinix.blog::lang.posts.new_post',
                         'icon'        => 'icon-plus',
-                        'url'         => Backend::url('winter/blog/posts/create'),
-                        'permissions' => ['winter.blog.access_posts']
+                        'url'         => Backend::url('xinix/blog/posts/create'),
+                        'permissions' => ['xinix.blog.access_posts']
                     ],
                     'posts' => [
-                        'label'       => 'winter.blog::lang.blog.posts',
+                        'label'       => 'xinix.blog::lang.blog.posts',
                         'icon'        => 'icon-copy',
-                        'url'         => Backend::url('winter/blog/posts'),
-                        'permissions' => ['winter.blog.access_posts']
+                        'url'         => Backend::url('xinix/blog/posts'),
+                        'permissions' => ['xinix.blog.access_posts']
                     ],
                     'categories' => [
-                        'label'       => 'winter.blog::lang.blog.categories',
+                        'label'       => 'xinix.blog::lang.blog.categories',
                         'icon'        => 'icon-list-ul',
-                        'url'         => Backend::url('winter/blog/categories'),
-                        'permissions' => ['winter.blog.access_categories']
+                        'url'         => Backend::url('xinix/blog/categories'),
+                        'permissions' => ['xinix.blog.access_categories']
                     ]
                 ]
             ]
@@ -107,14 +107,14 @@ class Plugin extends PluginBase
     {
         return [
             'blog' => [
-                'label' => 'winter.blog::lang.blog.menu_label',
-                'description' => 'winter.blog::lang.blog.settings_description',
-                'category' => 'winter.blog::lang.blog.menu_label',
+                'label' => 'xinix.blog::lang.blog.menu_label',
+                'description' => 'xinix.blog::lang.blog.settings_description',
+                'category' => 'xinix.blog::lang.blog.menu_label',
                 'icon' => 'icon-pencil',
-                'class' => 'Winter\Blog\Models\Settings',
+                'class' => 'Xinix\Blog\Models\Settings',
                 'order' => 500,
                 'keywords' => 'blog post category',
-                'permissions' => ['winter.blog.manage_settings']
+                'permissions' => ['xinix.blog.manage_settings']
             ]
         ];
     }
@@ -150,11 +150,11 @@ class Plugin extends PluginBase
          */
         Event::listen('pages.menuitem.listTypes', function() {
             return [
-                'blog-category'       => 'winter.blog::lang.menuitem.blog_category',
-                'all-blog-categories' => 'winter.blog::lang.menuitem.all_blog_categories',
-                'blog-post'           => 'winter.blog::lang.menuitem.blog_post',
-                'all-blog-posts'      => 'winter.blog::lang.menuitem.all_blog_posts',
-                'category-blog-posts' => 'winter.blog::lang.menuitem.category_blog_posts',
+                'blog-category'       => 'xinix.blog::lang.menuitem.blog_category',
+                'all-blog-categories' => 'xinix.blog::lang.menuitem.all_blog_categories',
+                'blog-post'           => 'xinix.blog::lang.menuitem.blog_post',
+                'all-blog-posts'      => 'xinix.blog::lang.menuitem.all_blog_posts',
+                'category-blog-posts' => 'xinix.blog::lang.menuitem.category_blog_posts',
             ];
         });
 

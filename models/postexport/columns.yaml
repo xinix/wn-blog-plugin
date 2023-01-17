@@ -5,15 +5,15 @@
 columns:
 
     id: ID
-    title: winter.blog::lang.post.title
-    content: winter.blog::lang.post.content
-    content_html: winter.blog::lang.post.content_html
-    excerpt: winter.blog::lang.post.excerpt
-    slug: winter.blog::lang.post.slug
-    categories: winter.blog::lang.post.categories
-    author_email: winter.blog::lang.post.author_email
-    featured_image_urls: winter.blog::lang.post.featured_images
-    created_at: winter.blog::lang.post.created_date
-    updated_at: winter.blog::lang.post.updated_date
-    published: winter.blog::lang.post.published
-    published_at: winter.blog::lang.post.published_date
+    title: xinix.blog::lang.post.title
+    content: xinix.blog::lang.post.content
+    content_html: xinix.blog::lang.post.content_html
+    excerpt: xinix.blog::lang.post.excerpt
+    slug: xinix.blog::lang.post.slug
+    categories: xinix.blog::lang.post.categories
+    author_email: xinix.blog::lang.post.author_email
+    featured_image_urls: xinix.blog::lang.post.featured_images
+    created_at: xinix.blog::lang.post.created_date
+    updated_at: xinix.blog::lang.post.updated_date
+    published: xinix.blog::lang.post.published
+    published_at: xinix.blog::lang.post.published_date

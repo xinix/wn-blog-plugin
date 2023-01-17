@@ -1,4 +1,4 @@
-<?php namespace Winter\Blog\Updates;
+<?php namespace Xinix\Blog\Updates;
 
 use Schema;
 use Winter\Storm\Database\Updates\Migration;
@@ -15,6 +15,7 @@ class CreatePostsTable extends Migration
             $table->integer('user_id')->unsigned()->nullable()->index();
             $table->string('title')->nullable();
             $table->string('slug')->index();
+            $table->string('featured_images')->nullable();
             $table->text('excerpt')->nullable();
             $table->longText('content')->nullable();
             $table->longText('content_html')->nullable();

@@ -1,11 +1,11 @@
-<?php namespace Winter\Blog\Components;
+<?php namespace Xinix\Blog\Components;
 
 use Lang;
 use Response;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
-use Winter\Blog\Models\Post as BlogPost;
-use Winter\Blog\Models\Category as BlogCategory;
+use Xinix\Blog\Models\Post as BlogPost;
+use Xinix\Blog\Models\Category as BlogCategory;
 
 class RssFeed extends ComponentBase
 {
@@ -36,8 +36,8 @@ class RssFeed extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'winter.blog::lang.settings.rssfeed_title',
-            'description' => 'winter.blog::lang.settings.rssfeed_description'
+            'name'        => 'xinix.blog::lang.settings.rssfeed_title',
+            'description' => 'xinix.blog::lang.settings.rssfeed_description'
         ];
     }
 
@@ -45,37 +45,37 @@ class RssFeed extends ComponentBase
     {
         return [
             'categoryFilter' => [
-                'title'       => 'winter.blog::lang.settings.posts_filter',
-                'description' => 'winter.blog::lang.settings.posts_filter_description',
+                'title'       => 'xinix.blog::lang.settings.posts_filter',
+                'description' => 'xinix.blog::lang.settings.posts_filter_description',
                 'type'        => 'string',
                 'default'     => '',
             ],
             'sortOrder' => [
-                'title'       => 'winter.blog::lang.settings.posts_order',
-                'description' => 'winter.blog::lang.settings.posts_order_description',
+                'title'       => 'xinix.blog::lang.settings.posts_order',
+                'description' => 'xinix.blog::lang.settings.posts_order_description',
                 'type'        => 'dropdown',
                 'default'     => 'created_at desc',
             ],
             'postsPerPage' => [
-                'title'             => 'winter.blog::lang.settings.posts_per_page',
+                'title'             => 'xinix.blog::lang.settings.posts_per_page',
                 'type'              => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'winter.blog::lang.settings.posts_per_page_validation',
+                'validationMessage' => 'xinix.blog::lang.settings.posts_per_page_validation',
                 'default'           => '10',
             ],
             'blogPage' => [
-                'title'       => 'winter.blog::lang.settings.rssfeed_blog',
-                'description' => 'winter.blog::lang.settings.rssfeed_blog_description',
+                'title'       => 'xinix.blog::lang.settings.rssfeed_blog',
+                'description' => 'xinix.blog::lang.settings.rssfeed_blog_description',
                 'type'        => 'dropdown',
                 'default'     => 'blog/post',
-                'group'       => 'winter.blog::lang.settings.group_links',
+                'group'       => 'xinix.blog::lang.settings.group_links',
             ],
             'postPage' => [
-                'title'       => 'winter.blog::lang.settings.posts_post',
-                'description' => 'winter.blog::lang.settings.posts_post_description',
+                'title'       => 'xinix.blog::lang.settings.posts_post',
+                'description' => 'xinix.blog::lang.settings.posts_post_description',
                 'type'        => 'dropdown',
                 'default'     => 'blog/post',
-                'group'       => 'winter.blog::lang.settings.group_links',
+                'group'       => 'xinix.blog::lang.settings.group_links',
             ],
         ];
     }

@@ -1,15 +1,15 @@
-<?php namespace Winter\Blog\Components;
+<?php namespace Xinix\Blog\Components;
 
 use Event;
 use BackendAuth;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
-use Winter\Blog\Models\Post as BlogPost;
+use Xinix\Blog\Models\Post as BlogPost;
 
 class Post extends ComponentBase
 {
     /**
-     * @var Winter\Blog\Models\Post The post model used for display.
+     * @var Xinix\Blog\Models\Post The post model used for display.
      */
     public $post;
 
@@ -21,8 +21,8 @@ class Post extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'winter.blog::lang.settings.post_title',
-            'description' => 'winter.blog::lang.settings.post_description'
+            'name'        => 'xinix.blog::lang.settings.post_title',
+            'description' => 'xinix.blog::lang.settings.post_description'
         ];
     }
 
@@ -30,14 +30,14 @@ class Post extends ComponentBase
     {
         return [
             'slug' => [
-                'title'       => 'winter.blog::lang.settings.post_slug',
-                'description' => 'winter.blog::lang.settings.post_slug_description',
+                'title'       => 'xinix.blog::lang.settings.post_slug',
+                'description' => 'xinix.blog::lang.settings.post_slug_description',
                 'default'     => '{{ :slug }}',
                 'type'        => 'string',
             ],
             'categoryPage' => [
-                'title'       => 'winter.blog::lang.settings.post_category',
-                'description' => 'winter.blog::lang.settings.post_category_description',
+                'title'       => 'xinix.blog::lang.settings.post_category',
+                'description' => 'xinix.blog::lang.settings.post_category_description',
                 'type'        => 'dropdown',
                 'default'     => 'blog/category',
             ],
@@ -99,7 +99,7 @@ class Post extends ComponentBase
         if (!$this->checkEditor()) {
             $query->isPublished();
         }
-        
+
         $post = $query->first();
 
         /*
@@ -151,6 +151,6 @@ class Post extends ComponentBase
     {
         $backendUser = BackendAuth::getUser();
 
-        return $backendUser && $backendUser->hasAccess('winter.blog.access_posts');
+        return $backendUser && $backendUser->hasAccess('xinix.blog.access_posts');
     }
 }

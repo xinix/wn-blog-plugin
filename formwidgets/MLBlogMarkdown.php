@@ -1,13 +1,13 @@
-<?php namespace Winter\Blog\FormWidgets;
+<?php namespace Xinix\Blog\FormWidgets;
 
-use Winter\Blog\Models\Post;
+use Xinix\Blog\Models\Post;
 use Winter\Translate\Models\Locale;
 
 /**
  * A multi-lingual version of the blog markdown editor.
  * This class should never be invoked without the Winter.Translate plugin.
  *
- * @package winter\blog
+ * @package xinix\blog
  * @author Alexey Bobkov, Samuel Georges
  */
 class MLBlogMarkdown extends BlogMarkdown

@@ -2,15 +2,15 @@
 #  Form Behavior Config
 # ===================================
 
-name: winter.blog::lang.blog.create_post
-form: ~/plugins/winter/blog/models/post/fields.yaml
-modelClass: Winter\Blog\Models\Post
-defaultRedirect: winter/blog/posts
+name: xinix.blog::lang.blog.create_post
+form: ~/plugins/xinix/blog/models/post/fields.yaml
+modelClass: Xinix\Blog\Models\Post
+defaultRedirect: xinix/blog/posts
 
 create:
-    redirect: winter/blog/posts/update/:id
-    redirectClose: winter/blog/posts
+    redirect: xinix/blog/posts/update/:id
+    redirectClose: xinix/blog/posts
 
 update:
-    redirect: winter/blog/posts
-    redirectClose: winter/blog/posts
+    redirect: xinix/blog/posts
+    redirectClose: xinix/blog/posts

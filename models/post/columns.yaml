@@ -5,32 +5,26 @@
 columns:
 
     title:
-        label: winter.blog::lang.post.title
+        label: xinix.blog::lang.post.title
         searchable: true
 
-    # author:
-    #   label: Author
-    #   relation: user
-    #   select: login
-    #   searchable: true
-
     categories:
-        label: winter.blog::lang.post.categories
+        label: xinix.blog::lang.post.categories
         relation: categories
         select: name
         searchable: true
         sortable: false
 
     created_at:
-        label: winter.blog::lang.post.created
+        label: xinix.blog::lang.post.created
         type: date
         invisible: true
 
     updated_at:
-        label: winter.blog::lang.post.updated
+        label: xinix.blog::lang.post.updated
         type: date
         invisible: true
 
     published_at:
-        label: winter.blog::lang.post.published
+        label: xinix.blog::lang.post.published
         type: date

@@ -1,8 +1,8 @@
-<?php namespace Winter\Blog\Updates;
+<?php namespace Xinix\Blog\Updates;
 
 use Schema;
 use Winter\Storm\Database\Updates\Migration;
-use Winter\Blog\Models\Category as CategoryModel;
+use Xinix\Blog\Models\Category as CategoryModel;
 
 class PostsAddMetadata extends Migration
 {

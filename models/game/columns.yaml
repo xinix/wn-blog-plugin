@@ -1,0 +1,13 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    name:
+        label: xinix.blog::lang.game.name
+        searchable: true
+
+    post_count:
+        label: xinix.blog::lang.game.posts
+        sortable: false

@@ -1,10 +1,10 @@
-<?php namespace Winter\Blog\Components;
+<?php namespace Xinix\Blog\Components;
 
 use Db;
 use Carbon\Carbon;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
-use Winter\Blog\Models\Category as BlogCategory;
+use Xinix\Blog\Models\Category as BlogCategory;
 
 class Categories extends ComponentBase
 {
@@ -26,8 +26,8 @@ class Categories extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'winter.blog::lang.settings.category_title',
-            'description' => 'winter.blog::lang.settings.category_description'
+            'name'        => 'xinix.blog::lang.settings.category_title',
+            'description' => 'xinix.blog::lang.settings.category_description'
         ];
     }
 
@@ -35,23 +35,23 @@ class Categories extends ComponentBase
     {
         return [
             'slug' => [
-                'title'       => 'winter.blog::lang.settings.category_slug',
-                'description' => 'winter.blog::lang.settings.category_slug_description',
+                'title'       => 'xinix.blog::lang.settings.category_slug',
+                'description' => 'xinix.blog::lang.settings.category_slug_description',
                 'default'     => '{{ :slug }}',
                 'type'        => 'string',
             ],
             'displayEmpty' => [
-                'title'       => 'winter.blog::lang.settings.category_display_empty',
-                'description' => 'winter.blog::lang.settings.category_display_empty_description',
+                'title'       => 'xinix.blog::lang.settings.category_display_empty',
+                'description' => 'xinix.blog::lang.settings.category_display_empty_description',
                 'type'        => 'checkbox',
                 'default'     => 0,
             ],
             'categoryPage' => [
-                'title'       => 'winter.blog::lang.settings.category_page',
-                'description' => 'winter.blog::lang.settings.category_page_description',
+                'title'       => 'xinix.blog::lang.settings.category_page',
+                'description' => 'xinix.blog::lang.settings.category_page_description',
                 'type'        => 'dropdown',
                 'default'     => 'blog/category',
-                'group'       => 'winter.blog::lang.settings.group_links',
+                'group'       => 'xinix.blog::lang.settings.group_links',
             ],
         ];
     }

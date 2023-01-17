@@ -1,8 +1,8 @@
-<?php namespace Winter\Blog\Updates;
+<?php namespace Xinix\Blog\Updates;
 
 use Schema;
 use Winter\Storm\Database\Updates\Migration;
-use Winter\Blog\Models\Category;
+use Xinix\Blog\Models\Category;
 
 class CategoriesAddNestedFields extends Migration
 {
@@ -30,7 +30,7 @@ class CategoriesAddNestedFields extends Migration
         }
 
         Category::extend(function ($model) {
-            $model->setTable('winter_blog_categories');
+            $model->setTable('xinix_blog_categories');
         });
     }
 
