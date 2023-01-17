@@ -28,6 +28,7 @@ class Plugin extends PluginBase
             'Xinix\Blog\Components\Post'       => 'blogPost',
             'Xinix\Blog\Components\Posts'      => 'blogPosts',
             'Xinix\Blog\Components\Categories' => 'blogCategories',
+            'Xinix\Blog\Components\Games'      => 'blogGames',
             'Xinix\Blog\Components\RssFeed'    => 'blogRssFeed'
         ];
     }
@@ -48,6 +49,11 @@ class Plugin extends PluginBase
             'xinix.blog.access_categories' => [
                 'tab'   => 'xinix.blog::lang.blog.tab',
                 'label' => 'xinix.blog::lang.blog.access_categories',
+                'roles' => [UserRole::CODE_DEVELOPER, UserRole::CODE_PUBLISHER],
+            ],
+            'xinix.blog.access_games' => [
+                'tab'   => 'xinix.blog::lang.blog.tab',
+                'label' => 'xinix.blog::lang.blog.access_games',
                 'roles' => [UserRole::CODE_DEVELOPER, UserRole::CODE_PUBLISHER],
             ],
             'xinix.blog.access_other_posts' => [
@@ -97,6 +103,12 @@ class Plugin extends PluginBase
                         'icon'        => 'icon-list-ul',
                         'url'         => Backend::url('xinix/blog/categories'),
                         'permissions' => ['xinix.blog.access_categories']
+                    ],
+                    'games' => [
+                        'label'       => 'xinix.blog::lang.blog.games',
+                        'icon'        => 'icon-gamepad',
+                        'url'         => Backend::url('xinix/blog/games'),
+                        'permissions' => ['xinix.blog.access_games']
                     ]
                 ]
             ]
